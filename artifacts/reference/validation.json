@@ -1,0 +1,25 @@
+{
+  "tests_passed": 41,
+  "tests_skipped": 0,
+  "coverage_statements": 658,
+  "coverage_statements_executed": 591,
+  "coverage_percent": 89.8176291793313,
+  "notebook_executed_code_cells": 5,
+  "notebook_embedded_figures": 3,
+  "averaged_experiments": 32,
+  "switching_experiments": 8,
+  "solver_fallbacks_total": 0,
+  "provenance": {
+    "python": "3.13.7",
+    "platform": "Windows",
+    "dependencies": {
+      "numpy": "2.5.2",
+      "scipy": "1.18.1",
+      "matplotlib": "3.11.1",
+      "osqp": "1.1.3",
+      "powercontrollab": "0.1.0"
+    },
+    "source_sha256": "4fa94c7abc2b9ec2cd45b7985ef6b6d9dafffbb3d47250fd8bcaa87ff5473057"
+  },
+  "note": "Local Python 3.13 validation. Timing metrics depend on the host."
+}

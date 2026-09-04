@@ -1,0 +1,39 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - os: ubuntu-latest
+            python: '3.11'
+          - os: ubuntu-latest
+            python: '3.13'
+          - os: windows-latest
+            python: '3.13'
+    runs-on: ${{ matrix.os }}
+    env:
+      MPLBACKEND: Agg
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
+        with:
+          python-version: ${{ matrix.python }}
+          cache: pip
+      - run: python -m pip install -e ".[dev,dashboard]"
+      - run: python -m ruff check .
+      - run: python -m ruff format --check .
+      - run: python -m pytest --cov=powercontrollab --cov-report=term-missing
+      - run: python -m build
+      - name: CLI integration smoke test
+        run: python main.py --controller all --scenario nominal --no-plots --no-raw --output results/ci
+

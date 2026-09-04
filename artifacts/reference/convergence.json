@@ -1,0 +1,38 @@
+[
+  {
+    "mode": "averaged",
+    "substeps": 10,
+    "reference_substeps": 40,
+    "max_voltage_difference_v": 0.0010821223528409973,
+    "rms_voltage_difference_v": 3.886450285769955e-05,
+    "thd_percent": 1.058372512162253,
+    "thd_difference_percentage_points": 5.069495379039779e-06
+  },
+  {
+    "mode": "averaged",
+    "substeps": 20,
+    "reference_substeps": 40,
+    "max_voltage_difference_v": 0.0002630243344015071,
+    "rms_voltage_difference_v": 1.7376400009759997e-05,
+    "thd_percent": 1.058364452944663,
+    "thd_difference_percentage_points": 2.9897222109109833e-06
+  },
+  {
+    "mode": "switching",
+    "substeps": 10,
+    "reference_substeps": 40,
+    "max_voltage_difference_v": 0.0004156375299544379,
+    "rms_voltage_difference_v": 1.4092412046302e-05,
+    "thd_percent": 1.0606163701014064,
+    "thd_difference_percentage_points": 3.3511271705366497e-05
+  },
+  {
+    "mode": "switching",
+    "substeps": 20,
+    "reference_substeps": 40,
+    "max_voltage_difference_v": 0.00013340159193830914,
+    "rms_voltage_difference_v": 1.021838954669584e-05,
+    "thd_percent": 1.0606541338282858,
+    "thd_difference_percentage_points": 4.252455173991976e-06
+  }
+]

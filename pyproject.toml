@@ -1,0 +1,44 @@
+[build-system]
+requires = ["setuptools>=77", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "powercontrollab"
+version = "0.1.0"
+description = "Reproducible control benchmarks for a single-phase LC-filtered inverter"
+readme = "README.md"
+requires-python = ">=3.11"
+license = "MIT"
+authors = [{name = "mohammmad357"}]
+keywords = ["inverter", "sliding-mode-control", "model-predictive-control", "power-electronics"]
+classifiers = ["Programming Language :: Python :: 3", "Topic :: Scientific/Engineering", "Development Status :: 4 - Beta"]
+dependencies = ["numpy>=1.26,<3", "scipy>=1.12,<2", "matplotlib>=3.8,<4", "osqp>=1.0,<2"]
+
+[project.optional-dependencies]
+dashboard = ["streamlit>=1.50,<2", "pandas>=2.2,<4"]
+notebook = ["jupyterlab>=4,<5", "ipykernel>=6", "nbformat>=5", "nbclient>=0.10"]
+dev = ["pytest>=8,<10", "pytest-cov>=5", "ruff>=0.9", "build>=1.2"]
+
+[project.scripts]
+powercontrollab = "powercontrollab.cli:main"
+
+[project.urls]
+Repository = "https://github.com/mohammmad357/PowerControlLab"
+Issues = "https://github.com/mohammmad357/PowerControlLab/issues"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-ra"
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B", "UP"]
+
+[tool.coverage.run]
+source = ["powercontrollab"]

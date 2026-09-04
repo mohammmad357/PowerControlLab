@@ -1,0 +1,19 @@
+name: Bug report
+description: Report a reproducible simulation, numerical or software issue.
+body:
+  - type: textarea
+    attributes:
+      label: Reproduction command and configuration
+      description: Include controller, scenario, seed and any changed parameters.
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: Expected and observed behavior
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: Environment and evidence
+      description: Paste run.json provenance and relevant metrics or traceback.
+

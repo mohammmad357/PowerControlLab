@@ -1,0 +1,18 @@
+cff-version: 1.2.0
+message: "If you use PowerControlLab in research, please cite the version and commit."
+title: "PowerControlLab: Reproducible DC–AC Inverter Control Benchmarks"
+type: software
+authors:
+  - name: mohammmad357
+    website: "https://github.com/mohammmad357"
+version: 0.1.0
+date-released: 2026-09-03
+url: "https://github.com/mohammmad357/PowerControlLab"
+repository-code: "https://github.com/mohammmad357/PowerControlLab"
+license: MIT
+keywords:
+  - power electronics
+  - sliding mode control
+  - model predictive control
+  - inverter
+

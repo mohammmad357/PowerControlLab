@@ -1,0 +1,8 @@
+# Direct numerical dependency snapshot for Python 3.13.
+# Install the project first: python -m pip install -e .
+# Transitive dependencies are resolved normally; run.json records these numerical versions.
+numpy==2.5.2
+scipy==1.18.1
+matplotlib==3.11.1
+osqp==1.1.3
+

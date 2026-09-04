@@ -1,0 +1,7 @@
+{
+  "averaged_runs": 32,
+  "switching_runs": 8,
+  "all_metrics_finite_or_explicit_null": true,
+  "solver_fallbacks_total": 0,
+  "note": "CPU timings vary by host. Null recovery means not settled within the run."
+}

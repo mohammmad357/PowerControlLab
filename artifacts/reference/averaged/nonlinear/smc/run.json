@@ -1,0 +1,55 @@
+{
+  "plant": {
+    "dc_voltage": 400.0,
+    "voltage_rms": 230.0,
+    "frequency": 50.0,
+    "switching_frequency": 20000.0,
+    "inductance": 0.002,
+    "capacitance": 2e-05,
+    "inductor_resistance": 0.15,
+    "load_resistance": 50.0,
+    "modulation_limit": 0.98,
+    "rectifier_resistance": 100.0,
+    "rectifier_capacitance": 0.00047,
+    "rectifier_series_resistance": 3.0,
+    "diode_drop": 0.7
+  },
+  "simulation": {
+    "duration": 0.24,
+    "scenario": "nonlinear",
+    "load": "resistive",
+    "mode": "averaged",
+    "substeps": 10,
+    "seed": 7,
+    "event_time": 0.1,
+    "ramp_time": 0.02,
+    "analysis_cycles": 5,
+    "voltage_noise_std": 0.5,
+    "current_noise_std": 0.02,
+    "delay_samples": 1,
+    "dc_sag_factor": 0.9,
+    "load_step_factor": 0.5,
+    "inductance_factor": 1.3,
+    "capacitance_factor": 0.8
+  },
+  "controller": "smc",
+  "controller_parameters": {
+    "gains": {
+      "sliding_rate": 8000.0,
+      "boundary_width": 50000.0,
+      "switching_gain": 18.0
+    }
+  },
+  "provenance": {
+    "python": "3.13.7",
+    "platform": "Windows",
+    "dependencies": {
+      "numpy": "2.5.2",
+      "scipy": "1.18.1",
+      "matplotlib": "3.11.1",
+      "osqp": "1.1.3",
+      "powercontrollab": "0.1.0"
+    },
+    "source_sha256": "4fa94c7abc2b9ec2cd45b7985ef6b6d9dafffbb3d47250fd8bcaa87ff5473057"
+  }
+}
