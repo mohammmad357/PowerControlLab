@@ -46,8 +46,23 @@ cd PowerControlLab
 python -m venv .venv
 ```
 
-Activate the environment: `.venv\Scripts\activate` on Windows, or
-`source .venv/bin/activate` on macOS/Linux. Then:
+Activate the environment using the command for your shell:
+
+| Shell | Activation command |
+|---|---|
+| Windows PowerShell | `.\.venv\Scripts\Activate.ps1` |
+| Windows CMD | `.venv\Scripts\activate.bat` |
+| macOS/Linux | `source .venv/bin/activate` |
+
+If PowerShell blocks activation scripts, you can use the environment's Python directly,
+without changing the execution policy:
+
+```powershell
+.\.venv\Scripts\python.exe -m pip install -e ".[dev,dashboard]"
+.\.venv\Scripts\python.exe main.py --controller smc --load nonlinear
+```
+
+Otherwise, after activation:
 
 ```bash
 python -m pip install -e ".[dev,dashboard]"
