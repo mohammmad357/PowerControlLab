@@ -255,3 +255,10 @@ See [CONTRIBUTING.md](CONTRIBUTING.md) for extension contracts.
 MPC, delay compensation and hardware validation. Report issues with the command, configuration
 and seed. Released under [MIT](LICENSE); cite the version and commit using [CITATION.cff](CITATION.cff).
 
+
+
+## Visual engineering notes
+
+[Engineering note 01 — No universal winner](docs/showcase-01.md) compares nonlinear-load and L/C-mismatch reference cases, with a visual summary, source revision and reproduction context.
+
+[View the LinkedIn presentation](https://www.linkedin.com/feed/update/urn:li:activity:7517347706277830656/).
