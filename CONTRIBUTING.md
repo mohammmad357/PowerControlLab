@@ -14,3 +14,23 @@ A new plant model needs an independent analytical limit or convergence test.
 Report software bugs with the exact command, seed, `run.json` and the observed result.
 Discuss model assumptions and controller tuning in issues; negative benchmark results are useful.
 
+
+## Minimal reproducible bug report
+
+Copy this checklist into an issue and replace the example values with the actual run:
+
+```text
+Commit or release:
+Python version and operating system:
+Exact command (run from the repository root):
+Controller / scenario / mode / seed:
+Expected behavior:
+Actual behavior and complete error message:
+Smallest configuration that still reproduces the problem:
+```
+
+Attach the affected run's `run.json` and `metrics.json` when available. If the run
+failed before creating them, include the command and traceback instead; missing
+artifacts should not prevent reporting a startup failure. Keep measured timings
+separate from correctness and physical-validation claims. Remove credentials,
+private paths and unrelated personal information from shared diagnostics.
