@@ -1,19 +1,32 @@
 name: Bug report
 description: Report a reproducible simulation, numerical or software issue.
 body:
+  - type: markdown
+    attributes:
+      value: Reports are public. Remove credentials, private paths and personal information from diagnostics. See CONTRIBUTING.md for the reproduction checklist.
   - type: textarea
+    id: reproduction
     attributes:
       label: Reproduction command and configuration
-      description: Include controller, scenario, seed and any changed parameters.
+      description: Include the exact command run from the repository root, controller, scenario, plant mode, seed and any changed parameters. Use the smallest configuration that reproduces the issue.
     validations:
       required: true
   - type: textarea
+    id: behavior
     attributes:
       label: Expected and observed behavior
+      description: Include the complete error message or the metric that differs from your expectation.
+    validations:
+      required: true
+  - type: input
+    id: environment
+    attributes:
+      label: Version and environment
+      description: Release or commit, Python version and operating system.
     validations:
       required: true
   - type: textarea
+    id: evidence
     attributes:
-      label: Environment and evidence
-      description: Paste run.json provenance and relevant metrics or traceback.
-
+      label: Run metadata and evidence
+      description: Attach or paste run.json and relevant metrics.json when available. For startup failures, the command and traceback are enough; missing artifacts should not prevent a report.
