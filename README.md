@@ -18,6 +18,15 @@ simulation results.
 [Controller derivations](docs/controllers.md) · [Protocol](docs/benchmark.md) ·
 [فارسی](docs/README_FA.md)
 
+## Choose your next step
+
+| Goal | Guide |
+|---|---|
+| Run one experiment and locate its files | [CLI recipes and output guide](docs/cli.md) |
+| Explore interactively and export results | [Dashboard guide](docs/dashboard.md) |
+| Compare methods without mixing assumptions | [Paired-comparison checklist](docs/benchmark.md#checklist-for-a-new-comparison) |
+| Start in Persian, including PowerShell | [راهنمای فارسی](docs/README_FA.md) |
+
 ## What you can investigate
 
 - **Two plant fidelities:** a fast averaged inverter and event-resolved unipolar SPWM.
