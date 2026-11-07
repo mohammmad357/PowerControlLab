@@ -89,3 +89,26 @@ tracking, disturbance response, noise, delay and nonlinear-load results together
 low THD alone is insufficient evidence of robustness. The single default noise seed is a
 reproducibility fixture, not a statistical confidence interval; use multiple seeds for any
 probabilistic performance claim.
+
+## Checklist for a new comparison
+
+Before interpreting a change in controller performance:
+
+1. Record a baseline command, source revision and dependency versions.
+2. Hold plant settings, initial conditions, scenario, duration, integration
+   resolution and evaluation window fixed across controllers.
+3. Change one experimental factor at a time. Give every run its own output
+   directory so new files cannot overwrite the baseline.
+4. For noisy cases, use the same seed for each paired controller comparison,
+   then repeat the pairs across several seeds. Report variability and the
+   number of seeds rather than presenting one seed as a confidence interval.
+5. Inspect tracking error together with peak current, saturation and solver
+   fallbacks. A lower voltage error alone does not establish a safer design.
+6. Check numerical sensitivity separately from controller sensitivity:
+   changing integration resolution is not the same experiment as changing gains.
+7. Retain the configurations and raw outputs supporting any published table.
+   Keep failures and undefined metrics visible rather than silently dropping them.
+
+This is a protocol for future experiments; it does not add measured results or
+change the existing reference snapshot. See [CLI recipes](cli.md) and
+[dashboard settings](dashboard.md) to avoid mismatched units or substep counts.
