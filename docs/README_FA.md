@@ -14,7 +14,22 @@ cd PowerControlLab
 python -m venv .venv
 ```
 
-در ویندوز: `.venv\Scripts\activate`؛ در لینوکس یا مک: `source .venv/bin/activate`.
+| محیط | فعال‌سازی |
+|---|---|
+| Windows PowerShell | `.\.venv\Scripts\Activate.ps1` |
+| Windows CMD | `.venv\Scripts\activate.bat` |
+| Linux / macOS | `source .venv/bin/activate` |
+
+اگر PowerShell اجرای اسکریپت را مسدود کرد، به تغییر سیاست امنیتی نیاز نیست؛
+پایتون همان محیط را مستقیم اجرا کنید:
+
+```powershell
+.\.venv\Scripts\python.exe -m pip install -e ".[dev,dashboard]"
+.\.venv\Scripts\python.exe main.py --controller smc --load nonlinear --output results/fa-first-run
+```
+
+برای فرمان‌های بعدی نیز می‌توانید به‌جای `python` از همین مسیر استفاده کنید.
+نمونه‌های زیر برای محیط فعال‌شده‌اند. همهٔ فرمان‌ها از ریشهٔ مخزن اجرا می‌شوند.
 
 ```bash
 python -m pip install -e ".[dev,dashboard]"
