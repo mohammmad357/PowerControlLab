@@ -69,3 +69,24 @@ saved. These flags do not remove old files from a reused directory, so stale plo
 must not be mistaken for outputs of the latest invocation.
 
 See the [metric definitions and limitations](benchmark.md).
+
+## Load selection and output paths
+
+`--load nonlinear` enables the nonlinear load independently of the scenario name.
+The `nonlinear` scenario also enables it, even if `--load` retains its default
+`resistive` value. The simulation uses an OR condition, not a rule where an
+explicit resistive flag overrides the nonlinear scenario.
+
+For example, this requests a nominal scenario with the nonlinear load:
+
+```sh
+python main.py --controller smc --scenario nominal --load nonlinear --output results/nonlinear-load-option
+```
+
+Its per-run files are under `results/nonlinear-load-option/nominal/smc/`.
+The `nominal` directory is the scenario key, not evidence of a resistive load.
+Inspect the effective `load` in `metrics.json` and retain `run.json` for context.
+A nonlinear scenario can produce a different settling-time origin from a timed
+disturbance scenario, so matching load alone is not enough to match an experiment.
+
+[Configuration error guide](validation.md) · [Exported metric fields](metric-fields.md)
