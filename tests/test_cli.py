@@ -19,3 +19,21 @@ def test_invalid_cli_is_nonzero(tmp_path):
     with pytest.raises(SystemExit) as raised:
         main(["--dc-voltage", "50", "--output", str(tmp_path)])
     assert raised.value.code == 2
+
+
+def test_invalid_analysis_window_does_not_create_output(tmp_path, capsys):
+    destination = tmp_path / "rejected-run"
+    with pytest.raises(SystemExit) as raised:
+        main(
+            [
+                "--duration",
+                "0.04",
+                "--output",
+                str(destination),
+                "--no-plots",
+                "--no-raw",
+            ]
+        )
+    assert raised.value.code == 2
+    assert "analysis needs a full cycle" in capsys.readouterr().err
+    assert not destination.exists()
