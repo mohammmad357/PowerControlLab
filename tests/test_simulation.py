@@ -88,3 +88,15 @@ def test_short_or_incoherent_analysis_fails_early():
         simulate(config=SimulationConfig(duration=0.04))
     with pytest.raises(ValueError):
         simulate(config=SimulationConfig(duration=0.241))
+
+
+def test_nonlinear_load_option_matches_nonlinear_scenario_waveforms():
+    by_load = simulate("smc", config=replace(SHORT, load="nonlinear"))
+    by_scenario = simulate("smc", config=replace(SHORT, scenario="nonlinear"))
+    # These entry points select the same physical load without timed disturbances.
+    for name in ("voltage", "current", "load_current", "rectifier_voltage"):
+        np.testing.assert_array_equal(getattr(by_load, name), getattr(by_scenario, name))
+    assert compute_metrics(by_load)["load"] == "nonlinear"
+    assert compute_metrics(by_scenario)["load"] == "nonlinear"
+    assert by_load.config.scenario == "nominal"
+    assert by_scenario.config.scenario == "nonlinear"
