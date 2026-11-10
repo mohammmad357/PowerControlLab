@@ -41,3 +41,10 @@ def test_settling_requires_staying_within_band():
     assert settled == pytest.approx(0.07)
     error[-10:] = 20
     assert settling_time(error, 1e-4, 50, 0, 0.1) is None
+
+
+def test_zero_error_still_requires_a_confirmation_cycle():
+    # One perfect cycle cannot establish that the response stays settled.
+    assert settling_time(np.zeros(200), 1e-4, 50, 0, 0.1) is None
+    # Two cycles allow the first complete cycle to be confirmed.
+    assert settling_time(np.zeros(400), 1e-4, 50, 0, 0.1) == pytest.approx(0.02)
