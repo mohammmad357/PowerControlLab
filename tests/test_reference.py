@@ -18,4 +18,5 @@ def test_reference_after_ramp_matches_unramped_sinusoid(time):
     expected_velocity = plant.peak * plant.omega * np.cos(plant.omega * time)
     assert voltage == pytest.approx(expected_voltage, abs=1e-10)
     assert velocity == pytest.approx(expected_velocity, abs=1e-8)
-    assert acceleration == pytest.approx(-plant.omega**2 * expected_voltage, abs=1e-6)
+    expected_acceleration = -plant.omega * plant.omega * expected_voltage
+    assert acceleration == pytest.approx(expected_acceleration, abs=1e-6)
